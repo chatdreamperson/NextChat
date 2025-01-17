@@ -7,7 +7,7 @@ import {
 import { getClientConfig } from "../config/client";
 import { createPersistStore } from "../utils/store";
 import { clientUpdate } from "../utils";
-import ChatGptIcon from "../icons/chatgpt.png";
+import appIcon from "/public/android-chrome-192x192.png";
 import Locale from "../locales";
 import { ClientApi } from "../client/api";
 
@@ -105,9 +105,9 @@ export const useUpdateStore = createPersistStore(
                       if (version === remoteId) {
                         // Show a notification using Tauri
                         window.__TAURI__?.notification.sendNotification({
-                          title: "NextChat",
+                          title: "Chat Dream Person",
                           body: `${Locale.Settings.Update.IsLatest}`,
-                          icon: `${ChatGptIcon.src}`,
+                          icon: `${appIcon.src}`,
                           sound: "Default",
                         });
                       } else {
@@ -115,9 +115,9 @@ export const useUpdateStore = createPersistStore(
                           Locale.Settings.Update.FoundUpdate(`${remoteId}`);
                         // Show a notification for the new version using Tauri
                         window.__TAURI__?.notification.sendNotification({
-                          title: "NextChat",
+                          title: "Chat Dream Person",
                           body: updateMessage,
-                          icon: `${ChatGptIcon.src}`,
+                          icon: `${appIcon.src}`,
                           sound: "Default",
                         });
                         clientUpdate();
